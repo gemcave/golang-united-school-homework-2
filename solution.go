@@ -13,12 +13,18 @@ import (
 
 type SidesType int
 
+const (
+	SidesTriangle = 3
+	SidesSquare = 4
+	SidesCircle = 0
+)
+
 func CalcSquare(sideLen float64, sidesNum SidesType) float64 {
-	if sidesNum == 3 {
+	if sidesNum == SidesTriangle {
 		return float64(math.Sqrt(3) / 4 * sideLen * sideLen)
-	} else if sidesNum == 4 {
+	} else if sidesNum == SidesSquare {
 		return float64(sideLen * sideLen)
-	} else if sidesNum == 0 {
+	} else if sidesNum == SidesCircle {
 		return float64(math.Pi * sideLen * sideLen)
 	}
 
